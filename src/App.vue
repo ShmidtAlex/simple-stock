@@ -10,42 +10,25 @@
       <div class="cart-block">        
         <p class="cart">Cart {{ cart.length }}</p>        
       </div>
-    </div>
-    <div class="review-wrapper">
-      <div class="review-box">
-        <h2>Reviews</h2>
-        <div>
-          <p v-show="!reviews.length">There are no reviews yet</p>
-          <ul v-show="reviews.length" class="listed-review">
-            <li class="review-item" v-for="(review, index) in reviews" :key="index">
-              <ul class="stars-list">
-                <li class="star" v-for="(star, index) in review.rating" :key="index"></li>
-              </ul>            
-              <i >{{review.review ? `\"${review.review}\"` : 'no text review'}}</i>
-              <div class="name">{{review.name}}</div>
-            </li>            
-          </ul>
-        </div>
-      </div>      
-      <ProductReview @reviewSubmitted="showReview"/>
-    </div>
-        
+    </div>    
+     <ReviewTabs />   
   </div>
 </template>
 
 <script>
 import Socks from '@/components/Socks.vue'
-import ProductReview from '@/components/ProductReview.vue'
+// import ProductReview from '@/components/ProductReview.vue'
+import ReviewTabs from '@/components/ReviewTabs.vue'
 export default {
   name: 'App',
   components: {
     Socks,
-    ProductReview
+    // ProductReview,
+    ReviewTabs
   },
   data() {
     return {
-      cart: [],
-      reviews: []
+      cart: []
     }
   },
   methods: {
@@ -57,9 +40,7 @@ export default {
         this.cart.splice(this.cart.indexOf(value), 1);
       } 
     },
-    showReview(productReview) {
-      this.reviews.push(productReview)
-    }
+    
   }
 }
 </script>
@@ -120,7 +101,6 @@ export default {
     border-radius: 5px;
     i {
       font-size: 22px;
-      height: 30px;
       width: 100%;
     }
     .name {

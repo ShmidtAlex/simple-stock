@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    
+  <div class="home">    
     <div class="socks-wrapper">      
       <Socks 
         @decreaseItemNumber="addToCart" 
@@ -55,10 +54,6 @@ export default {
   display: flex;
   flex-direction: column;
   margin-top: 27px;
-  .nav-bar {
-    height: 50px;
-    background: linear-gradient(to right, #2C7516, #38B712, #43D218);
-  }
   .socks-wrapper {
     height: 60%;
     display: flex;

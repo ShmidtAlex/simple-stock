@@ -92,7 +92,6 @@
     top: 26px;
     border: 2px solid blue;
     border-radius: 0 5px;
-    min-width: fit-content;
     z-index: 1;
     background-color: whitesmoke;
   }
